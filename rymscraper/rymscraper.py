@@ -88,7 +88,7 @@ class RymNetwork:
         logger.info("Extracting artist informations for %s.", url)
         self.browser.get_url(url)
         artist_infos = utils.get_artist_infos(self.browser.get_soup())
-        return {"infos": artist_infos, "url": url}
+        return (artist_infos, url)
 
     def get_artists_infos(
         self, urls: List[str] = None, names: List[str] = None
